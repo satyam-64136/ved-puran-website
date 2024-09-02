@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            padding: 0px 20px;
+            background-color: rgba(41, 35, 35, 0.39);
+            backdrop-filter: blur(50px);
+            z-index: 100;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg,transparent,rgba(255, 255, 255, 0.651),transparent);
+            transition: 0.5s;
+        }
+
+        header:hover::before {
+            left: 100%;
+        }
+
+        header nav a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 99px;
+            transition: 0.3s;
+            color: rgb(0, 0, 0);
+        }
+
+        header nav a.active {
+            background: rgb(82, 71, 185);
+        }
+
+        header nav a:hover {
+            background: #5247B9;
+        }
+
+        header nav:hover > a:not(:hover) {
+            background: none;
+        }
+
+        .logo {
+            margin-top: 12px;
+        }
+        .logo a {
+            font-size: 35px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.829);
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        li a {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 25px;
+            text-decoration: none;
+        }
+
+        button {
+            background-color: black;
+            margin-left: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            width: 70px;
+        }
+
+        button a {
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .search-box {
+            max-width: 105vh;
+            margin: 25px 20px 20px; 
+            background: hsla(0, 9%, 34%, 0.781);
+            width: 100%;
+            border-radius: 50px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .search-Field input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 16px 10px;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        ::placeholder {
+            color: #ffdddd;
+        }
+
+        .search-Field button {
+            border: 0;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            background: #95a1df27;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: calc(50% - 25px);
+        }
+
+        .search-Field button img {
+            width: 25px;
+        }
+
+        .search-Field button:hover {
+            transform: scale(1.2);
+            transition: all 0.05s linear;
+        }
+
+        .result-box {
+            background-color: #fff;
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0;
+            width: 100%;
+            border-radius: 10px 10px;
+            z-index: 1;
+            max-height: 300px;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            backdrop-filter: blur(30px); 
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); 
+        }
+
+        .result-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .result-box ul li {
+            padding: 10px;
+            background-color: rgba(240, 240, 240, 0.9);
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .result-box ul li:hover {
+            background-color: rgba(224, 224, 224, 0.9);
+        }
+
+        .result-box p {
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-family: Helvetica;
+            font-weight: bold;
+            color: #333;
+            text-align: left;
+            margin-top: 40px;
+            margin-left: 20px;
+        }
+
+        @media (max-width: 768px) {
+            #menu-icon {
+                display: block;
+                font-size: 30px;
+                color: white;
+                cursor: pointer;
+            }
+
+            .search-box {
+                display: none;
+            }
+
+            .navbar {
+                display: flex;
+                flex-direction: column;
+                width: 250px;
+                background-color: rgba(41, 35, 35, 0.9);
+                position: fixed;
+                top: 0;
+                left: -250px;
+                height: 100%;
+                z-index: 99;
+                padding-top: 100px;
+                transition: left 0.3s ease;
+            }
+
+            .navbar.active {
+                left: 0;
+            }
+
+            .navbar a {
+                padding: 10px;
+                color: white;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .navbar a:last-child {
+                border-bottom: none;
+            }
+        }
+
+        @media (min-width: 769px) {
+            #menu-icon {
+                display: none;
+            }
+
+            .navbar {
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                background-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="logo"><a href="#">VedPuran</a></h1>
+        <div class="search-box">
+            <div class="search-Field">
+                <input type="text" id="input-box" placeholder="Search here" autocomplete="off">
+                <button><img src="../images/search.png" alt="Search"></button>
+            </div>
+            <div class="result-box"></div>
+        </div>
+        <i id="menu-icon">&#9776;</i>
+        <nav class="navbar">
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Listen puran</a>
+            <a href="#">Donate</a>
+        </nav>
+    </header>
+    <script>
+        let availableKeyWords = [
+            'Agni puran',
+            'Bhagvat puran',
+            'Bhavishya puran',
+            'Matsya puran',
+            'Skand puran',
+            'Vishnu puran',
+            'padma puran'
+        ];
+
+        const resultBox = document.querySelector(".result-box");
+        const inputBox = document.getElementById("input-box");
+
+        inputBox.onkeyup = function() {
+            let input = inputBox.value.trim().toLowerCase();
+            let filteredResults = availableKeyWords.filter(keyword => keyword.toLowerCase().includes(input));
+            showResults(filteredResults);
+        }
+
+        function showResults(results) {
+            resultBox.innerHTML = "";
+            let input = inputBox.value.trim().toLowerCase();
+            if (input === "") {
+                return;
+            }
+            if (results.length > 0) {
+                const ul = document.createElement("ul");
+                results.forEach((result) => {
+                    const li = document.createElement("li");
+                    li.textContent = result;
+                    li.addEventListener("click", function() {
+                        inputBox.value = result;
+                        resultBox.innerHTML = "";
+                    });
+                    ul.appendChild(li);
+                });
+                resultBox.appendChild(ul);
+            } else {
+                resultBox.innerHTML = "<p>No results found</p>";
+            }
+        }
+
+        let menuIcon = document.getElementById("menu-icon");
+        const navbar = document.querySelector(".navbar");
+        const searchBox = document.querySelector(".search-box");
+
+        menuIcon.addEventListener("click", () => {
+            navbar.classList.toggle("active");
+            searchBox.style.display = navbar.classList.contains("active") ? "none" : "flex";
+        });
+
+        $(document).ready(function() {
+            const $menuIcon = $('#menu-icon');
+            const $navbar = $('.navbar');
+            const $searchBox = $('.search-box');
+
+            $menuIcon.on('click', function() {
+                $navbar.toggleClass('active');
+                $searchBox.css('display', $navbar.hasClass('active') ? 'none' : 'flex');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Your Website Name</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('images/hero-background.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding-top: 150px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 1;
+            text-align: center; /* Add this line */
+            margin: 0 auto; /* Ensure this line is present */
+            width: 100%; 
+        }
+
+        .hero h1 {
+
+            font-size: 48px;
+            text-align: center;
+            margin: 0;  /* Remove any default margin */
+            padding: 0;  /* Remove any default padding */
+            width: 100%;  /* Makes sure the heading takes up full width */
+        }
+        .hero p {
+            font-size: 18px;
+        }
+
+        /* About Section */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .section-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #222;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .container {
+                margin: 30px 10px;
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>About Us</h1>
+            <p>Your digital sanctuary for spiritual wisdom.</p>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <img src="images/mission.jpg" alt="Our Mission" class="section-image">
+            <h2>Our Mission</h2>
+            <p>At [Your Website Name], we believe in the power of ancient wisdom and the timeless teachings of the Vedas, Puranas, and other spiritual texts. Our mission is to make these sacred scriptures accessible to everyone, anywhere, anytime.</p>
+
+            <img src="images/offerings.jpg" alt="What We Offer" class="section-image">
+            <h2>What We Offer</h2>
+            <ul>
+                <li><strong>Vedas Audio:</strong> Dive deep into the ancient hymns and verses of the Vedas, presented in high-quality audio for a truly immersive experience.</li>
+                <li><strong>Puranas Audio:</strong> Listen to the stories and legends that have shaped Hindu culture and tradition.</li>
+                <li><strong>Spiritual Texts:</strong> Explore a wide range of other spiritual and religious texts in audio format.</li>
+            </ul>
+
+            <img src="images/contact.jpg" alt="Contact Us" class="section-image">
+            <h2>Contact Us</h2>
+            <p>We would love to hear from you! Whether you have questions, feedback, or suggestions, feel free to reach out.</p>
+            <p><strong>Email:</strong> [Your Email Address]</p>
+            <p><strong>Phone:</strong> [Your Phone Number]</p>
+            <p><strong>Social Media:</strong> [Links to your social media profiles]</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Website Name. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        $('#navbar-placeholder').load('../navbar.html', function(response, status, xhr) {
+            if (status == "error") {
+                console.log("Error loading navbar: " + xhr.status + " " + xhr.statusText);
+            }
+        });
+    </script>
+</body>
+</html>

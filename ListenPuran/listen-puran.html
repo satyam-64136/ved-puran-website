@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="listen-puran.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Puran Details</title>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <!-- Blurry Background Section -->
+    <div class="background">
+        <img src="" id="bg-img" alt="Background Image">
+    </div>
+
+    <div class="container">
+        <div class="player-img">
+            <img src="" class="active" id="puran-image">
+        </div>
+
+        <h2 id="puran-title">Puran Title</h2>
+
+        <div class="player-progress" id="player-progress">
+            <div class="progress" id="progress"></div>
+            <div class="music-duration">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+        </div>
+
+        <!-- Updated Player Controls -->
+        <div class="player-controls">
+            <i class="fa-solid fa-backward" title="Previous" id="prev"></i>
+            <i class="fa-solid fa-play play-button" title="Play" id="play"></i>
+            <i class="fa-solid fa-forward" title="Next" id="next"></i>
+        </div>
+
+        <audio id="puran-audio">
+            <source id="audio-source" src="" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./listen-puran.js"></script>
+</body>
+</html>

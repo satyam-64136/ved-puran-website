@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <div id="navbar-placeholder"></div>
+
+    <h1>Our Latest Releases</h1>
+    <!-- Card section for displaying latest veds and purans -->
+    <div class="card-container">
+        <button class="scroll-btn left-btn">&#10094;</button>
+        <div class="cards-wrapper">
+            <div class="card" onmouseover="showDescription(this)" onmouseout="hideDescription(this)" onclick="redirectToPuran('agni-puran')">
+                <img src="../cover pages/agni purana cover.jpg" alt="Agni Puran">
+                <div class="card-content">
+                    <div class="card-title">Agni Puran</div>
+                    <div class="card-description">Agni Puran, a significant Hindu scripture, centers on Agni, the god of fire. This Purana details rituals, cosmology, and moral teachings crucial for understanding Hindu religious practices. It underscores the sacred importance of fire in Hindu rituals and mythology, offering profound insights into spirituality and cosmic order. Agni Puran serves as a guiding light, illuminating the path of devotion and righteousness for followers of Hinduism.</div>
+                </div>
+            </div>
+            
+            <div class="card" onmouseover="showDescription(this)" onmouseout="hideDescription(this)" onclick="redirectToPuran('Bhavishya-Puran')">
+                <img src="../cover pages/bhavishya purana cover.jpg" alt="Bhavishya-Puran">
+                <div class="card-content">
+                    <div class="card-title">Bhavishya Puran</div>
+                    <div class="card-description">
+                        Bhavishya Puran, a revered Hindu scripture, offers prophetic narratives, rituals, and spiritual teachings. It provides insights into future events and imparts wisdom to its readers, emphasizing virtues, devotion, and righteous conduct. As a beacon of light, Bhavishya Puran guides individuals to lead lives aligned with dharma (righteousness), fostering spiritual growth and enlightenment.</div>
+                </div>
+            </div>
+            <div class="card" onmouseover="showDescription(this)" onmouseout="hideDescription(this)" onclick="redirectToPuran('Matsya-purana')">
+                <img src="../cover pages/matsya purana cover.jpg" alt="Matsya purana">
+                <div class="card-content">
+                    <div class="card-title">Matsya purana</div>
+                    <div class="card-description">Matsya Puran, a revered Hindu scripture, narrates tales and rituals linked to Lord Vishnu's Matsya Avatar, the fish incarnation. It offers insights into creation, cosmology, and moral teachings, guiding followers in upholding dharma (righteousness). This Purana serves as a repository of wisdom, inspiring spiritual enlightenment and moral living among Hindus.</div>
+                </div>
+            </div>
+            <div class="card" onmouseover="showDescription(this)" onmouseout="hideDescription(this)" onclick="redirectToPuran('Shiv-purana')">
+                <img src="../cover pages/shiv purana cover.jpg" alt="Shiv purana">
+                <div class="card-content">
+                    <div class="card-title">shiv purana</div>
+                    <div class="card-description">Shiv Puran is a revered ancient Hindu text dedicated to Lord Shiva, covering mythological tales, rituals, and teachings associated with the deity of destruction and transformation. It explores topics such as the creation of the universe, the importance of devotion to Shiva, and philosophical concepts like the Trimurti. This Purana holds great religious and cultural significance in Hinduism, offering insights into existence and spiritual liberation..</div>
+                </div>
+            </div>
+            <div class="card" onmouseover="showDescription(this)" onmouseout="hideDescription(this)" onclick="redirectToPuran('vishnu-purana')">
+                <img src="../cover pages/vishnu purana cover.jpg" alt="vishnu purana">
+                <div class="card-content">
+                    <div class="card-title">vishnu purana</div>
+                    <div class="card-description">
+                        Vishnu Puran, a cherished Hindu scripture, chronicles mythological narratives, rituals, and teachings centered around Lord Vishnu, the preserver in Hinduism. Exploring creation, devotion, and philosophical concepts like the Trimurti, it offers profound insights into spirituality. With its rich content, Vishnu Puran holds great religious and cultural significance, serving as a guiding light for seekers of truth and spiritual liberation.</div>
+                </div>
+            </div>
+            <div class="card" onmouseover="showDescription(this)" onmouseout="hideDescription(this)" onclick="redirectToPuran('varah-purana')">
+                <img src="../cover pages/varah purana cover.jpg" alt="varah purana">
+                <div class="card-content">
+                    <div class="card-title">varah purana</div>
+                    <div class="card-description">
+                        Varah Puran is a revered Hindu scripture focusing on Lord Varaha, an incarnation of Lord Vishnu in the form of a boar. This Purana narrates tales, rituals, and wisdom associated with Varaha, providing spiritual insights and moral guidance. Through its rich narratives, Varah Puran emphasizes the importance of devotion and righteousness, contributing significantly to Hindu culture and philosophy.</div>
+                </div>
+            </div>
+            <div class="card" onmouseover="showDescription(this)" onmouseout="hideDescription(this)" onclick="redirectToPuran('garur-puran')">
+                <img src="../cover pages/garur puran cover.jpg" alt="garur purana">
+                <div class="card-content">
+                    <div class="card-title">Garur puran</div>
+                    <div class="card-description">
+                        The Garuda Purana, one of the eighteen Mahapuranas, is named after Garuda, the divine bird and vehicle of Lord Vishnu. This revered Hindu text explores the afterlife, reincarnation, and the soul’s journey towards liberation. It provides guidance on ethics, rituals, and righteous living, making it a vital resource for spiritual understanding. Often recited during funeral rites, the Garuda Purana offers profound insights into the cycle of life, death, and the quest for moksha.</div>
+                </div>
+            </div>
+
+
+            <!-- space for More cards  -->
+        </div>
+        <button class="scroll-btn right-btn">&#10095;</button>
+    </div>
+    <script src="autocomplete.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            // Load navbar using jQuery
+            $("#navbar-placeholder").load("../navbar.html");});
+
+        function redirectToPuran(puranName) {
+            window.location.href = `../ListenPuran/listen-puran.html?name=${puranName}`;
+        }
+    </script>
+</body>
+</html>
