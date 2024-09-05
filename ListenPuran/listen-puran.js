@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const puranName = urlParams.get('name');
 
     const purans = {
-        'agni-puran': {
+        'agni-purana': {
             title: 'Agni Puran',
             image: '../cover pages/agni purana cover.jpg',
             audio: '../ListenPuran/Audio/agni purana.m4a'
         },
-        'Bhavishya-Puran': {
+        'Bhavishya-Purana': {
             title: 'Bhavishya Puran',
             image: '../cover pages/bhavishya purana cover.jpg',
             audio: '../ListenPuran/Audio/bhavishya purana.m4a'

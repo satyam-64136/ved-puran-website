@@ -113,7 +113,7 @@
             outline: none;
             padding: 16px 10px;
             font-size: 18px;
-            color: #fff;
+            color: #ffffff;
         }
 
         ::placeholder {
@@ -142,7 +142,7 @@
         }
 
         .result-box {
-            background-color: #fff;
+            background-color: #4b4949;
             position: absolute;
             top: calc(100% + 5px);
             left: 0;
@@ -163,16 +163,19 @@
 
         .result-box ul li {
             padding: 10px;
-            background-color: rgba(240, 240, 240, 0.9);
+            background-color: #4b4949;
             cursor: pointer;
             width: 100%;
+            color: #f0f0f0;
+            font-size:large ;
         }
 
         .result-box ul li:hover {
-            background-color: rgba(224, 224, 224, 0.9);
+            background-color: rgba(68, 63, 63, 0.616);
         }
 
         .result-box p {
+            color: #ffffff;
             padding: 10px 20px;
             border-radius: 5px;
         }
@@ -249,7 +252,7 @@
         <div class="search-box">
             <div class="search-Field">
                 <input type="text" id="input-box" placeholder="Search here" autocomplete="off">
-                <button><img src="../images/search.png" alt="Search"></button>
+                <button id="search-button"><img src="../images/search.png" alt="Search"></button>
             </div>
             <div class="result-box"></div>
         </div>
@@ -263,17 +266,19 @@
     </header>
     <script>
         let availableKeyWords = [
-            'Agni puran',
-            'Bhagvat puran',
-            'Bhavishya puran',
-            'Matsya puran',
-            'Skand puran',
-            'Vishnu puran',
-            'padma puran'
+            'Agni purana',
+            'Bhagvat purana',
+            'Bhavishya purana',
+            'Matsya purana',
+            'Skand purana',
+            'Vishnu purana',
+            'Padma purana',
+            'shiv purana'
         ];
 
         const resultBox = document.querySelector(".result-box");
         const inputBox = document.getElementById("input-box");
+        const searchButton = document.getElementById("search-button");
 
         inputBox.onkeyup = function() {
             let input = inputBox.value.trim().toLowerCase();
@@ -303,6 +308,20 @@
                 resultBox.innerHTML = "<p>No results found</p>";
             }
         }
+
+        searchButton.addEventListener("click", function() {
+        let input = inputBox.value.trim().toLowerCase();
+        console.log("User input:", input);
+        let availableLowercaseKeywords = availableKeyWords.map(keyword => keyword.toLowerCase());
+
+        if (availableLowercaseKeywords.includes(input)) {
+                let formattedName = input.replace(/ /g, '-');
+                console.log("Formatted name:", formattedName); 
+                window.location.href = `../ListenPuran/listen-puran.html?name=${formattedName}`;
+            } else {
+                alert("Please select a valid Puran from the list.");
+            }
+        });
 
         let menuIcon = document.getElementById("menu-icon");
         const navbar = document.querySelector(".navbar");

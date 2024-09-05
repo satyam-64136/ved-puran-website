@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Your Website Name</title>
+    <title>About Us - VedPuran</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,8 +15,8 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
-            background-color: #f4f4f9;
+            color: #f0f0f0;
+            background-color: #1a1a2e; /* Dark background */
         }
 
         /* Hero Section */
@@ -34,37 +35,39 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(88, 76, 121, 0.267);
         }
 
         .hero-text {
             position: relative;
             z-index: 1;
-            text-align: center; /* Add this line */
-            margin: 0 auto; /* Ensure this line is present */
-            width: 100%; 
+            text-align: center;
+            margin: 0 auto;
+            width: 100%;
         }
 
         .hero h1 {
-
+            color: #f5f5f5;
             font-size: 48px;
+            margin: 0;
+            padding: 0;
+            width: 100%;
             text-align: center;
-            margin: 0;  /* Remove any default margin */
-            padding: 0;  /* Remove any default padding */
-            width: 100%;  /* Makes sure the heading takes up full width */
         }
+
         .hero p {
             font-size: 18px;
         }
 
         /* About Section */
         .container {
-            max-width: 1100px;
+            max-width: 900px;
             margin: 50px auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            text-align: center;
         }
 
         .section-image {
@@ -75,14 +78,19 @@
         }
 
         h2 {
-            color: #222;
+            color: #f5f5f5;
             margin-bottom: 20px;
             font-weight: 600;
+            font-size: 2.5em;
+            text-align: center;
         }
 
         p {
-            line-height: 1.6;
+            line-height: 1.8;
             margin-bottom: 20px;
+            color: #e0e0e0;
+
+            text-align: center;
         }
 
         ul {
@@ -96,10 +104,11 @@
         }
 
         footer {
-            background-color: #222;
+            background-color: #16213e;
             color: #fff;
             text-align: center;
             padding: 20px;
+            margin-top: 50px;
         }
 
         footer p {
@@ -123,6 +132,7 @@
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
     <div id="navbar-placeholder"></div>
 
@@ -137,7 +147,7 @@
         <div class="container">
             <img src="images/mission.jpg" alt="Our Mission" class="section-image">
             <h2>Our Mission</h2>
-            <p>At [Your Website Name], we believe in the power of ancient wisdom and the timeless teachings of the Vedas, Puranas, and other spiritual texts. Our mission is to make these sacred scriptures accessible to everyone, anywhere, anytime.</p>
+            <p>At VedPuran, we believe in the power of ancient wisdom and the timeless teachings of the Vedas, Puranas, and other spiritual texts. Our mission is to make these sacred scriptures accessible to everyone, anywhere, anytime.</p>
 
             <img src="images/offerings.jpg" alt="What We Offer" class="section-image">
             <h2>What We Offer</h2>
@@ -150,22 +160,23 @@
             <img src="images/contact.jpg" alt="Contact Us" class="section-image">
             <h2>Contact Us</h2>
             <p>We would love to hear from you! Whether you have questions, feedback, or suggestions, feel free to reach out.</p>
-            <p><strong>Email:</strong> [Your Email Address]</p>
-            <p><strong>Phone:</strong> [Your Phone Number]</p>
+            <p><strong>Email:</strong> contact@vedpuran.com</p>
+            <p><strong>Phone:</strong> +123 456 7890</p>
             <p><strong>Social Media:</strong> [Links to your social media profiles]</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Your Website Name. All Rights Reserved.</p>
+        <p>&copy; 2024 VedPuran. All Rights Reserved.</p>
     </footer>
 
     <script>
-        $('#navbar-placeholder').load('../navbar.html', function(response, status, xhr) {
+        $('#navbar-placeholder').load('../navbar.html', function (response, status, xhr) {
             if (status == "error") {
                 console.log("Error loading navbar: " + xhr.status + " " + xhr.statusText);
             }
         });
     </script>
 </body>
+
 </html>
